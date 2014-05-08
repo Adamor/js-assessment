@@ -8,7 +8,9 @@ define(function () {
       for(i=start; i <= end; i++){
         numbers++
       }
-    }, 1000)
-      return numbers;
+       return numbers;
+       console.log(numbers);
+    }, 1000);
+    }
   };
 });
