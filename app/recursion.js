@@ -5,8 +5,8 @@ define(function() {
     listFiles: function(data, dirName) {
       var result = [];
 
-      for(dirName in data){
-        result.push(dirName);
+      for(data in dirName){
+        result.push(data);
       }
       return result;
     },

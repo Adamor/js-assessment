@@ -3,14 +3,22 @@ if (typeof define !== 'function') { var define = require('amdefine')(module); }
 define(function () {
   return {
     count : function (start, end) {
-      setTimeOut(function(){
-      var numbers = 0;
-      for(i=start; i <= end; i++){
-        numbers++
+      var timeout;
+
+      function countDown(){
+        console.log(start++);
+
+        if(start <= end){
+          timeout = setTimeout(countDown, 100);
+        }
       }
-       return numbers;
-       console.log(numbers);
-    }, 1000);
+      countDown();
+
+      return {
+        cancel : function(){
+          timeout && clearTimeout(timeout);
+        }
+      };
     }
   };
 });

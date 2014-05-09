@@ -91,3 +91,19 @@ function Construct(param1, param2, param3){
 };
 
 var newObject = new Construct(param1, param2, param3);
+
+// Powers 
+
+var myPow = function(a,b){
+    var thisPow = Math.pow(a, b);
+    alert(thisPow);
+}
+
+myPow(4,3);
+// Problem 1: Write a method that takes in some String and outputs true if it is a number, false if not
+
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+console.log(isNumber("1043"));
